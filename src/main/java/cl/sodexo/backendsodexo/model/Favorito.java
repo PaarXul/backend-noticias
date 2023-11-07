@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Setter
 @Getter
 @Entity
@@ -15,17 +17,24 @@ import lombok.Setter;
 public class Favorito {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private Long id_noticia;
     private String title;
     private String url;
     private String image_url;
     private String news_site;
     private String summary;
-    private String published_at;
-    private String updated_at;
+    private Date published_at;
+    private Date updated_at;
     private boolean featured;
+
+    private Date created;
+    @PrePersist
+    protected void onCreate() {
+        created = new Date();
+    }
 
 }
