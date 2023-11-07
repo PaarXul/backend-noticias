@@ -21,7 +21,7 @@ public class Favorito {
     private Long id;
 
     @Column(unique = true)
-    private Long id_noticia;
+    private Long idNoticia;
     private String title;
     private String url;
     private String image_url;

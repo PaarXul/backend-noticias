@@ -9,7 +9,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.PageRequest;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Service
@@ -44,56 +44,26 @@ public class FavoritoServiceImpl implements FavoritoService {
 
     @Override
     public Set<Favorito> AgregarFavorito(Set<Favorito> favoritos) throws CustomException {
-
         if (favoritos.isEmpty()) {
             throw new CustomException("No se enviaron favoritos");
         }
 
-        Set<Favorito> favoritosExistentes = new HashSet<>( favoritoRepository.findAll());
-        Set<Favorito> favoritosAgregar = new HashSet<>();
-
-        /*
-        for (Favorito favorito : favoritos) {
-            if (!favoritosExistentes.iterator().next().getId_noticia().equals(favorito.getId())) {
-                favorito.setId_noticia(favorito.getId());
-                favorito.setId(null);
-                favoritosAgregar.add(favorito);
-            }
-        }
-
-         */
-
-        if (favoritosExistentes.isEmpty()) {
-
-            favoritos.forEach(favorito -> {
-                favorito.setId_noticia(favorito.getId());
-                favorito.setId(null);
-                favoritosAgregar.add(favorito);
-
-            });
-        }else {
-
-
+        // Use set to automatically handle duplicates
+        Set<Favorito> favoritosAgregar = new LinkedHashSet<>();
 
         favoritos.forEach(favorito -> {
-            Iterator<Favorito> iter = favoritosExistentes.iterator();
-
-            while (iter.hasNext()) {
-                Favorito nextFavorito = iter.next();
-                if (!nextFavorito.getId_noticia().equals(favorito.getId())) {
-                    favorito.setId_noticia(favorito.getId());
-                    favorito.setId(null);
-                    favoritosAgregar.add(favorito);
-                }
+            favorito.setIdNoticia(favorito.getId());
+            favorito.setId(null);
+            if (!favoritoRepository.existsByIdNoticia(favorito.getIdNoticia())) {
+                favoritosAgregar.add(favorito);
             }
-        });
 
+        });
+        if (favoritosAgregar.isEmpty()) {
+            throw new CustomException("No se enviaron favoritos a guardar");
         }
         return new HashSet<>(favoritoRepository.saveAll(favoritosAgregar));
-
-
     }
-
     @Override
     public void EliminarFavorito(Long id) throws CustomException {
         if (favoritoRepository.findById(id).isEmpty()) {
