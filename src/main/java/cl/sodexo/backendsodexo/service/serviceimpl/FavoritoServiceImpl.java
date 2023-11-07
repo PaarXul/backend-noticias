@@ -47,6 +47,9 @@ public class FavoritoServiceImpl implements FavoritoService {
         if (favoritos.isEmpty()) {
             throw new CustomException("No se enviaron favoritos");
         }
+        if (favoritoRepository.existsByTitle(favoritos.iterator().next().getTitle())) {
+            throw new CustomException("El favorito ya existe");
+        }
 
         // Use set to automatically handle duplicates
         Set<Favorito> favoritosAgregar = new LinkedHashSet<>();

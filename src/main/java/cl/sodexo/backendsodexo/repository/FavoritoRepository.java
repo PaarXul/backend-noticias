@@ -18,4 +18,6 @@ public interface FavoritoRepository extends JpaRepository<Favorito, Long> {
 
     Boolean existsByIdNoticia(Long idNoticia);
 
+    Boolean existsByTitle(String title);
+
 }

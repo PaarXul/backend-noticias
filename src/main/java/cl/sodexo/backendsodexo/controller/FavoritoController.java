@@ -26,6 +26,9 @@ public class FavoritoController {
 
     @PostMapping("/")
     public ResponseEntity<Set<Favorito>> guardarFavorito(@RequestBody Set<Favorito> favoritos) throws CustomException {
+        if (favoritos.isEmpty()) {
+            throw new CustomException("No se enviaron favoritos");
+        }
         return ResponseEntity.ok( new HashSet<>(favoritoService.AgregarFavorito(favoritos)));
     }
 
@@ -41,7 +44,7 @@ public class FavoritoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarFavorito(@PathVariable("id") Long id) throws CustomException {
         favoritoService.EliminarFavorito(id);
-        return ResponseEntity.ok("Favorito eliminado correctamente");
+        return ResponseEntity.ok().build();
     }
 
 
