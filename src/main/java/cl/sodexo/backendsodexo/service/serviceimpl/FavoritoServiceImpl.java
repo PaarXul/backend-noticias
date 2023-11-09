@@ -47,17 +47,13 @@ public class FavoritoServiceImpl implements FavoritoService {
         if (favoritos.isEmpty()) {
             throw new CustomException("No se enviaron favoritos");
         }
-        if (favoritoRepository.existsByTitle(favoritos.iterator().next().getTitle())) {
-            throw new CustomException("El favorito ya existe");
-        }
 
-        // Use set to automatically handle duplicates
         Set<Favorito> favoritosAgregar = new LinkedHashSet<>();
 
         favoritos.forEach(favorito -> {
             favorito.setIdNoticia(favorito.getId());
             favorito.setId(null);
-            if (!favoritoRepository.existsByIdNoticia(favorito.getIdNoticia())) {
+            if (!favoritoRepository.existsByIdNoticia(favorito.getIdNoticia()) || !favoritoRepository.existsByTitle(favoritos.iterator().next().getTitle())) {
                 favoritosAgregar.add(favorito);
             }
 

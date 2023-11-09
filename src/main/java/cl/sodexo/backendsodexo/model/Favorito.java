@@ -26,6 +26,7 @@ public class Favorito {
     private String url;
     private String image_url;
     private String news_site;
+    @Column(length = 1000)
     private String summary;
     private Date published_at;
     private Date updated_at;
