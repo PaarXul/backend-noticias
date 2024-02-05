@@ -1,4 +1,4 @@
-package cl.sodexo.backendsodexo.config;
+package cl.noticias.backend.config;
 
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;

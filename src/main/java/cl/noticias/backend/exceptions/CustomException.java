@@ -1,4 +1,4 @@
-package cl.sodexo.backendsodexo.exceptions;
+package cl.noticias.backend.exceptions;
 
 public class CustomException extends Throwable {
     public CustomException(String s) {

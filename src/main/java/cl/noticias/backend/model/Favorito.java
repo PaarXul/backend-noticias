@@ -1,4 +1,4 @@
-package cl.sodexo.backendsodexo.model;
+package cl.noticias.backend.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,13 +1,11 @@
-package cl.sodexo.backendsodexo.repository;
+package cl.noticias.backend.repository;
 
-import cl.sodexo.backendsodexo.model.Favorito;
+import cl.noticias.backend.model.Favorito;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.Pageable;
-
-import java.util.Optional;
 
 
 @Repository

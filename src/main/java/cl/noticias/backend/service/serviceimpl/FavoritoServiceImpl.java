@@ -1,9 +1,9 @@
-package cl.sodexo.backendsodexo.service.serviceimpl;
+package cl.noticias.backend.service.serviceimpl;
 
-import cl.sodexo.backendsodexo.exceptions.CustomException;
-import cl.sodexo.backendsodexo.model.Favorito;
-import cl.sodexo.backendsodexo.repository.FavoritoRepository;
-import cl.sodexo.backendsodexo.service.FavoritoService;
+import cl.noticias.backend.exceptions.CustomException;
+import cl.noticias.backend.model.Favorito;
+import cl.noticias.backend.repository.FavoritoRepository;
+import cl.noticias.backend.service.FavoritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -49,7 +49,6 @@ public class FavoritoServiceImpl implements FavoritoService {
         }
 
         Set<Favorito> favoritosAgregar = new LinkedHashSet<>();
-
         favoritos.forEach(favorito -> {
             favorito.setIdNoticia(favorito.getId());
             favorito.setId(null);

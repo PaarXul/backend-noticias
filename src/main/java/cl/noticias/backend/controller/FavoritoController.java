@@ -1,9 +1,9 @@
-package cl.sodexo.backendsodexo.controller;
+package cl.noticias.backend.controller;
 
 
-import cl.sodexo.backendsodexo.exceptions.CustomException;
-import cl.sodexo.backendsodexo.model.Favorito;
-import cl.sodexo.backendsodexo.service.FavoritoService;
+import cl.noticias.backend.exceptions.CustomException;
+import cl.noticias.backend.model.Favorito;
+import cl.noticias.backend.service.FavoritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

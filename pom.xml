@@ -8,11 +8,11 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cl.sodexo</groupId>
-    <artifactId>Back-end-sodexo</artifactId>
+    <groupId>cl.noticias</groupId>
+    <artifactId>Back-end-Noticias</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Back-end-sodexo</name>
-    <description>Back-end-sodexo</description>
+    <name>Back-end-Noticias</name>
+    <description>Back-end-Noticias</description>
     <properties>
         <java.version>17</java.version>
     </properties>

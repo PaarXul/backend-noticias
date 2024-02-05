@@ -1,10 +1,10 @@
-package cl.sodexo.backendsodexo;
+package cl.noticias.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackEndSodexoApplicationTests {
+class BackEndNoticiasApplicationTests {
 
     @Test
     void contextLoads() {

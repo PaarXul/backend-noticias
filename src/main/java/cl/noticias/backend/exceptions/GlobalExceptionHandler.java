@@ -1,4 +1,4 @@
-package cl.sodexo.backendsodexo.exceptions;
+package cl.noticias.backend.exceptions;
 
 
 import org.springframework.http.HttpStatus;

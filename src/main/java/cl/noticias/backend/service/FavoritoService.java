@@ -1,7 +1,7 @@
-package cl.sodexo.backendsodexo.service;
+package cl.noticias.backend.service;
 
-import cl.sodexo.backendsodexo.exceptions.CustomException;
-import cl.sodexo.backendsodexo.model.Favorito;
+import cl.noticias.backend.exceptions.CustomException;
+import cl.noticias.backend.model.Favorito;
 import org.springframework.data.domain.Page;
 
 import java.util.Set;

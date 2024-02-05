@@ -1,7 +1,4 @@
-package cl.sodexo.backendsodexo.dto;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.PrePersist;
+package cl.noticias.backend.dto;
 
 import java.util.Date;
 
