@@ -20,7 +20,7 @@ Solucion de desarrollada con Java 17 en framework Spring Boot 3.1.5 y Base de da
 
 ### Proyecto Backend
 - Clonar el proyecto desde el repositorio de GitHub con el siguiente comando:
-- git clone https://github.com/PaarXul/backend-sodexo.git
+- git clone https://github.com/PaarXul/backend-noticas.git
 - Abrir el proyecto en el IDE de desarrollo
 - Ejecutar el comando "mvn clean install" para descargar las dependencias del proyecto
 - Ejecutar el comando "mvn spring-boot:run" para iniciar el proyecto
@@ -185,7 +185,7 @@ Solucion de desarrollada con Java 17 en framework Spring Boot 3.1.5 y Base de da
 
 ### Proyecto Frontend
 - Clonar el proyecto desde el repositorio de GitHub con el siguiente comando:
-- git clone https://github.com/PaarXul/FrontEnd-Sodexo.git
+- git clone https://github.com/PaarXul/FrontEnd-noticas.git
 - Ejecutar el comando "npm install" para descargar las dependencias del proyecto
 - Ejecutar el comando "ng serve" para iniciar el proyecto
 - Abrir el navegador web y acceder a la url http://localhost:4200 para acceder a la aplicación web
@@ -199,6 +199,6 @@ Solucion de desarrollada con Java 17 en framework Spring Boot 3.1.5 y Base de da
 
 ## Repositorio de GitHub
 - Repositorio del proyecto Backend:
-  - https://github.com/PaarXul/backend-sodexo
+  - https://github.com/PaarXul/backend-noticas
 - Repositorio del proyecto Frontend:
-  - https://github.com/PaarXul/FrontEnd-Sodexo
+  - https://github.com/PaarXul/FrontEnd-noticas
